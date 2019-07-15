@@ -1,0 +1,29 @@
+{
+    "name": "iplocation/local",
+    "description": "get the ip's location info with Chinese",
+	"keywords": ["ip", "location", "chinese"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wxyhhy911",
+            "email": "wxyhhyp11@gmail.com"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"IpLocation\\Local\\": "src/"
+		}
+	},
+    "extra": {
+      "laravel": {
+        "aliases": {
+          "Ip": "IpLocation\\Local\\Ip"
+        }
+      }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+      "phpunit/phpunit": "^4.0"
+    }
+  }
