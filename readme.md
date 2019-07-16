@@ -5,7 +5,8 @@
 源自 https://packagist.org/packages/zhuzhichao/ip-location-zh
 感谢原作者。
 
-只是重命名了空间。原先的有点那啥....
+重命名了空间名称（应用在项目中显得正式点），增加了location方法方便直接输出地址
+
 
 数据源于: http://www.ipip.net
 最后更新时间：20190703
@@ -40,7 +41,9 @@
 ```php
 require 'vendor/autoload.php';  
 use IpLocation\local\Ip;  
-var_dump(Ip::find('171.12.10.156'));
+var_dump(Ip::find('171.12.10.156'));//输出数组
+
+var_dump(Ip::location('171.12.10.156')); //直接输出地址
 ```
 
 ```
@@ -51,6 +54,8 @@ array (size=4)
   2 => string '郑州' (length=6)
   3 => string '' (length=0)
   4 => string '410100' (length=6)
+----------------------------------
+string '河南郑州'
 ```
 
 #### Laravel
@@ -68,10 +73,12 @@ array (size=4)
 ],
 ```
 
-3.然后开始在你的项目里面使用了 `Ip::find('171.12.10.156')` 或 `Ip::find(Request::getClientIp())`
+3.然后开始在你的项目里面使用了
+ `Ip::find('171.12.10.156')` 或 `Ip::find(Request::getClientIp())`
+ `Ip::location('171.12.10.156')` 或 `Ip::location(Request::getClientIp())`
 
 
-**对，很简单，只用一个方法，那就是 `find`**
+**对，很简单， `find`输出数组，`location`输出拼接好的字符串**
 
 ## Contributing
 有什么新的想法和建议，欢迎提交 [issue](https://github.com/zhuzhichao/ip-location-zh/issues) 或者 [Pull Requests](https://github.com/zhuzhichao/ip-location-zh/pulls) 。

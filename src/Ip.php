@@ -19,6 +19,20 @@ class Ip
     private static $reader = null;
 
     private static $cached = [];
+    /**
+     * 简单输出IP地址
+     */
+    public static function location($ip){
+        $result=self::find($ip);
+        if ($result!='N/A'){
+            if ($result[0]=='局域网') {
+                return $result[0];
+            }else {
+                return $result[0].$result[1].$result[2].$result[3];
+            }
+        }
+        return $result;
+    }
 
     /**
      * 查询 IP 信息
